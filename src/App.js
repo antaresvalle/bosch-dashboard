@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
 
+    this.state = {
+      data: [],
+    };
+  }
+
+  componentDidMount(){
+    fetch('https://connectorysolutions.com/talentfest/data/2018-09-04 22:00:00/2018-09-0 22:00:00')
+    .then(response => {
+      return response.json()})
+    .then(data => {
+      console.log(data);
+      let lastValues = data.length-1;
+      console.log(lastValues);
+      this.setState({data: data[lastValues]});
+      console.log(data[0].temperature);
+    });
+  }
+  
   render() {
+    // const {data} = this.state;
+    // console.log({data});
+
     return (
       <div className="App">
         <header className="App-header">
@@ -14,7 +36,7 @@ class App extends Component {
         <div className="sensors">
           <div className="temperature sensor">
             <h2>Temperature</h2>
-            <span className="value">50 C</span>
+            <span className="value">{this.state.data.temperature}</span>
             <div className="notification-sensor">
               <i></i>
               <p>Status</p>
@@ -22,7 +44,7 @@ class App extends Component {
           </div>
           <div className="humidity sensor">
             <h2>Humidity</h2>
-            <span className="value">75%</span>
+            <span className="value">{this.state.data.humidity}%</span>
             <div className="notification-sensor">
               <i></i>
               <p>Status</p>
@@ -30,7 +52,7 @@ class App extends Component {
           </div>
           <div className="noise sensor">
           <h2>Noise</h2>
-          <span className="value">10db</span>
+          <span className="value">{this.state.data.noise}db</span>
           <div className="notification-sensor">
               <i></i>
               <p>Status</p>
@@ -38,7 +60,7 @@ class App extends Component {
           </div>
           <div className="luminosity sensor">
           <h2>Luminosity</h2>
-          <span className="value">10xl</span>
+          <span className="value">{this.state.data.illumination}xl</span>
           <div className="notification-sensor">
               <i></i>
               <p>Status</p>
