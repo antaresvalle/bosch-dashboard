@@ -7,13 +7,26 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to Bosch Dashboard</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <main>
+        <div className="sensors">
+          <div className="temperature">
+            <h2>Temperature</h2>
+          </div>
+          <div className="humidity">
+            <h2>Humidity</h2>
+          </div>
+          <div className="noise">
+          <h2>Noise</h2>
+          </div>
+          <div className="luminosity">
+          <h2>Luminosity</h2>
+          </div>
+        </div>
+      </main>
       </div>
+      
     );
   }
 }
