@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './assets/images/Bosch_LOGO_CURVAS_SLOGAN.png'
 import colores from './assets/images/supergraphic.png'
 import person from './assets/images/persona.jpg'
-import ChartLines from './ChartLines';
 // import facebook from 'public/glyphicons-social/png/glyphicons-social-31-facebook.png
 import './App.css';
 
@@ -11,15 +10,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
     };
-
-    this.handleGetData = this.handleGetData.bind(this);
-   
   }
 
-  handleGetData(){
-    fetch('https://connectorysolutions.com/talentfest/data/')
+  componentDidMount() {
+    fetch('https://connectorysolutions.com/talentfest/data/2018-09-04 22:00:00/2018-09-0 22:00:00')
       .then(response => {
         return response.json()
       })
@@ -27,59 +23,14 @@ class App extends Component {
         console.log(data);
         let lastValues = data.length - 1;
         console.log(lastValues);
-        console.log(this);
         this.setState({ data: data[lastValues] });
         console.log(data[0].temperature);
-      }) 
-  }
-
-
-
-  componentWillMount() {
-    fetch('https://connectorysolutions.com/talentfest/data/')
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        console.log(data);
-        let lastValues = data.length - 1;
-        console.log(lastValues);
-        console.log(this);
-        this.setState({ data: data[lastValues] });
-        console.log(data[0].temperature);
-      })
-    setInterval(this.handleGetData, 30000);
-    // fetch('https://connectorysolutions.com/talentfest/data/')
-    //   .then(response => {
-    //     return response.json()
-    //   })
-    //   .then(data => {
-    //     console.log(data);
-    //     let lastValues = data.length - 1;
-    //     console.log(lastValues);
-    //     console.log(this);
-    //     this.setState({ data: data[lastValues] });
-    //     console.log(data[0].temperature);
-    //   }) 
-  }
-  getData(){
-    fetch('https://connectorysolutions.com/talentfest/data/')
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        console.log(data);
-        let lastValues = data.length - 1;
-        console.log(lastValues);
-        this.setState({ data: data[lastValues] });
-        //console.log(data[0].temperature);
-      }) 
+      });
   }
  
-
   render() {
     // const {data} = this.state;
-    //console.log(this.state.data);
+    // console.log({data});
 
     return (
       <div className="App">
@@ -112,7 +63,6 @@ class App extends Component {
             <h2>Temperature</h2>
             <span className="value">{this.state.data.temperature}</span>
             <div className="notification-sensor">
-            {/* <Notification props={this.state.data.temperature}/> */}
               <i></i>
               <p>Status</p>
             </div>
@@ -128,7 +78,6 @@ class App extends Component {
           <div className="noise sensor">
           <h2>Noise</h2>
           <span className="value">{this.state.data.noise}db</span>
-         
           <div className="notification-sensor">
               <i></i>
               <p>Status</p>
@@ -143,7 +92,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <ChartLines value={{data: this.state.data}}/>
       </main>
         <footer>
           <div class="container final">
