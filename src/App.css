@@ -34,12 +34,9 @@
   padding: 0;
 }
 
-header{
-  background-color: white;
-}
-.top {
+/* .top {
   border-bottom: 1.5px solid lightgray;
-}
+} */
 .logo-bosch {
   height: 100px;
   width:auto;
@@ -55,21 +52,42 @@ header{
   /* top: 0.8em; */
 }
 .round {
+  border-radius: 50%;
   height: 60px;
   width:auto;
   position:relative;
   /* bottom: 1em; */
   /* right: 0.5em; */
 }
-
-.right-info{
-  color: gray;
-  left: 60em;
-  position: relative;
+.name{
+  text-align: right;
 }
 
-.right-info i{
-  margin: 0.5em;
+.personal-info{
+  color: gray;
+  text-align: right;
+}
+
+.personal-info i{
+  margin: 0 1em;
+}
+
+.line{
+  border-bottom: 1.5px solid gray;
+  margin: 1em;
+}
+
+@media screen and (max-width:480px){
+  .name > h3{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+}
+}
+@media screen and (min-width: 480px) and (max-width:780px){
+  .name > h3{
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.2rem;
+  }
 }
 .sensor {
   display: inline-block;
