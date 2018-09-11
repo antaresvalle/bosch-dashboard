@@ -110,19 +110,19 @@ class App extends Component {
         <div className="sensors">
           <div className="temperature sensor">
             <h2>Temperature</h2>
-            <span className="value">{this.state.data.temperature}</span>
+            <span className="value">{this.state.data.temperature}℃</span>
             <div className="notification-sensor">
             {/* <Notification props={this.state.data.temperature}/> */}
-              <i></i>
-              <p>Status</p>
+            <i className="fas fa-exclamation notification-icon"></i>
+              <span>Status</span>
             </div>
           </div>
           <div className="humidity sensor">
             <h2>Humidity</h2>
             <span className="value">{this.state.data.humidity}%</span>
             <div className="notification-sensor">
-              <i></i>
-              <p>Status</p>
+            <i className="fas fa-check notification-icon"></i>
+              <span>Status</span>
             </div>
           </div>
           <div className="noise sensor">
@@ -130,16 +130,16 @@ class App extends Component {
           <span className="value">{this.state.data.noise}db</span>
          
           <div className="notification-sensor">
-              <i></i>
-              <p>Status</p>
+          <i className="fas fa-times notification-icon"></i>
+              <span>Status</span>
             </div>
           </div>
           <div className="luminosity sensor">
           <h2>Luminosity</h2>
           <span className="value">{this.state.data.illumination}xl</span>
           <div className="notification-sensor">
-              <i></i>
-              <p>Status</p>
+          <i className="fas fa-exclamation notification-icon"></i>
+              <span>Status</span>
             </div>
           </div>
         </div>
