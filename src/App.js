@@ -100,7 +100,7 @@ class App extends Component {
                   <div><i className="far fa-life-ring"></i></div>
                   <div><i className="fas fa-bell"></i></div>
                   <div><i className="fas fa-chevron-down"></i></div>
-                  <div><img src={person} className="round img-fluid" /></div>
+                  <div><img src={person} className="round img-fluid" alt="img-person"/></div>
                 </div>
               </div>
             </div>
