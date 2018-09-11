@@ -83,31 +83,27 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-        <img class="img-fluid" src={colores} alt="" />
-          <nav class="navbar sticky-top fixed-top navbar-light top">
-            <img class="img-fluid logo-bosch" src={logo} alt="" />
+        <header class="">
+          {/* <h1 className="App-title">Welcome to Bosch Dashboard</h1> */}
+          <img className="img-fluid" src={colores} alt="" />
+          <nav className="navbar  navbar-light top">
+            <img className="img-fluid logo-bosch" src={logo} alt="" />
             <h3>XDK Monitoring</h3>
-          </nav>
-          <nav class="navbar sticky-top fixed-top navbar-light">
-            <i class="fas fa-bars"></i>
-            <ul class="nav justify-content-end right-info">
-              <li class="nav-item">
-                <i class="far fa-life-ring"></i>
-              </li>
-              <li class="nav-item">
-                <i class="fas fa-bell"></i>
-              </li>
-              <li class="nav-item">
-                <p>Nombre de</p>
-              </li>
-              <li class="nav-item">
-                <span><i class="fas fa-chevron-down"></i></span>
-              </li>
-              <li class="nav-item">
-                <img src={person} class="round img-fluid" />
-              </li>
-            </ul>
+            {/* </nav> */}
+            {/* <nav class="navbar  navbar-light"> */}
+            <div className="container">
+              <div className="d-flex justify-content-between">
+                <div className="">
+                  <i className="fas fa-bars"></i>
+                </div>
+                <div className="right-info d-flex justify-content-end">
+                  <div><i className="far fa-life-ring"></i></div>
+                  <div><i className="fas fa-bell"></i></div>
+                  <div><i className="fas fa-chevron-down"></i></div>
+                  <div><img src={person} className="round img-fluid" /></div>
+                </div>
+              </div>
+            </div>
           </nav>
         </header>
         <main>
@@ -149,36 +145,49 @@ class App extends Component {
         </div>
         <ChartLines value={{data: this.state.data}}/>
       </main>
-      <div>
-      </div>
-      <footer>
-          <div class="container">
+        <footer>
+          <div class="container final">
             <div class="row">
               <div class="col">
                 <div class="iconos">
-                  <h6></h6>
+                  <h6>Stay up to date</h6>
                   <a href=""><i class="fab fa-facebook-f"></i></a>
                   <a href=""><i class="fab fa-twitter"></i></a>
                   <a href=""><i class="fab fa-youtube"></i></a>
                   <a href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
+              </div>
+              <div class="col">
                 <div class="touch">
-                  <h6></h6>
-                  <p></p>
-                  <p></p>
-                  <p></p>
+                  <h6>Get in touch</h6>
+                  <p class="touch-text">General contact info</p>
+                  <p class="touch-text">Licenses and Patents</p>
+                  <p class="touch-text">Purchasing and Logistic</p>
                 </div>
+              </div>
+              <div class="col">
                 <div class="bosch">
-                  <h6></h6>
-                  <h4></h4>
-                  <h5><a href=""></a></h5>
-                  <h6></h6>
-                  <h5><a href=""></a></h5>
+                  <h6>You are on </h6>
+                  <h4>Bosch Global</h4>
+                  <h5><a class="bosch-link" target="_blank" href="https://www.bosch.com/websites-worldwide/">Bosch worldwide</a></h5>
+                  <h6>All Bosch apps</h6>
+                  <h5><a class="bosch-link" target="_blank" href="https://appcenter.bosch.com/">Bosch App Center</a></h5>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row"></div>
+          <div class="container">
+          <div class="row bottom-text">
+          <div class="col-12 no-padding">
+            <span class="strong">&copy; 2018 Robert Bosch GmbH</span>
+            <span>Terms of use</span>
+            <span>Legal notice</span>
+            <span>Privacy statement</span>
+            <span>Cookies</span>
+            <span>Privacy Settings</span>
+            </div>
+            </div>
+          </div>
           <img class="img-fluid" src={colores} alt="" />
         </footer>
       </div>
