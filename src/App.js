@@ -13,10 +13,57 @@ class App extends Component {
     this.state = {
       data: []
     };
+
+    this.handleGetData = this.handleGetData.bind(this);
+   
   }
 
+  handleGetData(){
+    fetch('https://connectorysolutions.com/talentfest/data/')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        console.log(data);
+        let lastValues = data.length - 1;
+        console.log(lastValues);
+        console.log(this);
+        this.setState({ data: data[lastValues] });
+        console.log(data[0].temperature);
+      }) 
+  }
+
+
+
   componentWillMount() {
-    fetch('https://connectorysolutions.com/talentfest/data/2018-09-04 22:00:00/2018-09-0 22:00:00')
+    fetch('https://connectorysolutions.com/talentfest/data/')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        console.log(data);
+        let lastValues = data.length - 1;
+        console.log(lastValues);
+        console.log(this);
+        this.setState({ data: data[lastValues] });
+        console.log(data[0].temperature);
+      })
+    setInterval(this.handleGetData, 30000);
+    // fetch('https://connectorysolutions.com/talentfest/data/')
+    //   .then(response => {
+    //     return response.json()
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //     let lastValues = data.length - 1;
+    //     console.log(lastValues);
+    //     console.log(this);
+    //     this.setState({ data: data[lastValues] });
+    //     console.log(data[0].temperature);
+    //   }) 
+  }
+  getData(){
+    fetch('https://connectorysolutions.com/talentfest/data/')
       .then(response => {
         return response.json()
       })
@@ -26,7 +73,7 @@ class App extends Component {
         console.log(lastValues);
         this.setState({ data: data[lastValues] });
         //console.log(data[0].temperature);
-      });
+      }) 
   }
  
 
@@ -69,6 +116,7 @@ class App extends Component {
             <h2>Temperature</h2>
             <span className="value">{this.state.data.temperature}</span>
             <div className="notification-sensor">
+            {/* <Notification props={this.state.data.temperature}/> */}
               <i></i>
               <p>Status</p>
             </div>
