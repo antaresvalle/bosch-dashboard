@@ -86,7 +86,7 @@ class App extends Component {
         <header className="container-fluid">
         <div className="row">
         <div className="col">
-        <img className="img-fluid logo-bosch" src={logo} alt="" />
+        <img className="logo-bosch" src={logo} alt="" />
         </div>
         <div className="col name">
             <h3>XDK Monitoring</h3>
@@ -103,47 +103,50 @@ class App extends Component {
                   <i className="far fa-life-ring"></i>
                   <i className="fas fa-bell"></i>
                   <i className="fas fa-chevron-down"></i>
-                  <img src={person} className="round img-fluid" />
+                  <img src={person} className="round" />
                 </div>
               </div>
         </header>
         <main>
         <div className="sensors container">
-          <div className="temperature sensor">
-            <h2>Temperature</h2>
-            <span className="value">{this.state.data.temperature}℃</span>
-            <div className="notification-sensor">
+        <div className="row">
+          <div className="temperature sensor col-3">
+            <h2 className="col-12">Temperature</h2>
+            <span className="value col-12">{this.state.data.temperature}℃</span>
+            <div className="notification-sensor col-12">
             {/* <Notification props={this.state.data.temperature}/> */}
-            <i className="fas fa-exclamation notification-icon"></i>
-              <span>Status</span>
+            <i className="fas fa-exclamation notification-icon col-12"></i>
+              <span className="col-12">Status</span>
             </div>
           </div>
-          <div className="humidity sensor">
-            <h2>Humidity</h2>
-            <span className="value">{this.state.data.humidity}%</span>
-            <div className="notification-sensor">
-            <i className="fas fa-check notification-icon"></i>
-              <span>Status</span>
+          <div className="humidity sensor col-3">
+            <h2 className="col-12">Humidity</h2>
+            <span className="value col-12">{this.state.data.humidity}%</span>
+            <div className="notification-sensor col-12">
+            <i className="fas fa-check notification-icon col-12"></i>
+              <span className="col-12">Status</span>
             </div>
           </div>
-          <div className="noise sensor">
-          <h2>Noise</h2>
-          <span className="value">{this.state.data.noise}db</span>
-          <div className="notification-sensor">
-          <i className="fas fa-times notification-icon"></i>
-              <span>Status</span>
+          <div className="noise sensor col-3">
+          <h2 className="col-12">Noise</h2>
+          <span className="value col-12">{this.state.data.noise}db</span>
+          <div className="notification-sensor col-12">
+          <i className="fas fa-times notification-icon col-12"></i>
+              <span className="col-12">Status</span>
             </div>
           </div>
-          <div className="luminosity sensor">
-          <h2>Luminosity</h2>
-          <span className="value">{this.state.data.illumination}xl</span>
-          <div className="notification-sensor">
-          <i className="fas fa-exclamation notification-icon"></i>
-              <span>Status</span>
+          <div className="luminosity sensor col-3">
+          <h2 className="col-12">Luminosity</h2>
+          <span className="value col-12">{this.state.data.illumination}xl</span>
+          <div className="notification-sensor col-12">
+          <i className="fas fa-exclamation notification-icon col-12"></i>
+              <span className="col-12">Status</span>
             </div>
+          </div>
           </div>
         </div>
         <ChartLines value={{data: this.state.data}}/>
+        <div className="line"></div>
       </main>
         <footer>
           <div class="container final">
@@ -151,7 +154,7 @@ class App extends Component {
               <div class="col">
                 <div class="iconos">
                   <h6>Stay up to date</h6>
-                  <a href=""><i class="fab fa-facebook-f"></i></a>
+                  <a href=""><i id="facebook" class="fab fa-facebook-f"></i></a>
                   <a href=""><i class="fab fa-twitter"></i></a>
                   <a href=""><i class="fab fa-youtube"></i></a>
                   <a href=""><i class="fab fa-linkedin-in"></i></a>
