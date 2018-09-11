@@ -82,28 +82,30 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header class="">
-          {/* <h1 className="App-title">Welcome to Bosch Dashboard</h1> */}
-          <img className="img-fluid" src={colores} alt="" />
-          <nav className="navbar  navbar-light top">
-            <img className="img-fluid logo-bosch" src={logo} alt="" />
+        <img className="img-fluid" src={colores} alt="" />
+        <header className="container-fluid">
+        <div className="row">
+        <div className="col">
+        <img className="img-fluid logo-bosch" src={logo} alt="" />
+        </div>
+        <div className="col name">
             <h3>XDK Monitoring</h3>
-            {/* </nav> */}
-            {/* <nav class="navbar  navbar-light"> */}
-            <div className="container">
-              <div className="d-flex justify-content-between">
+            </div>
+        </div>
+        <div className="line"></div>
+        <div className="row">
+              <div className="col">
                 <div className="">
                   <i className="fas fa-bars"></i>
                 </div>
-                <div className="right-info d-flex justify-content-end">
-                  <div><i className="far fa-life-ring"></i></div>
-                  <div><i className="fas fa-bell"></i></div>
-                  <div><i className="fas fa-chevron-down"></i></div>
-                  <div><img src={person} className="round img-fluid" /></div>
+                </div>
+                <div className="col personal-info">
+                  <i className="far fa-life-ring"></i>
+                  <i className="fas fa-bell"></i>
+                  <i className="fas fa-chevron-down"></i>
+                  <img src={person} className="round img-fluid" />
                 </div>
               </div>
-            </div>
-          </nav>
         </header>
         <main>
         <div className="sensors container">
