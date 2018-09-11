@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: []
+      data: {},
+      history: []
     };
 
     this.handleGetData = this.handleGetData.bind(this);
@@ -23,11 +24,22 @@ class App extends Component {
         return response.json()
       })
       .then(data => {
-        console.log(data);
+        let temperature = data.map( item => parseFloat(item.temperature) );
+        temperature.unshift("temperature");
+        let humidity = data.map( item => parseFloat(item.humidity) );
+        humidity.unshift("humidity");
+        let luminosity = data.map( item => parseFloat(item.illumination)/3 );
+        luminosity.unshift("luminosity");
+        let noise = data.map( item => parseFloat(item.noise) );
+        noise.unshift("noise");
         let lastValues = data.length - 1;
         console.log(lastValues);
         console.log(this);
-        this.setState({ data: data[lastValues] });
+        this.setState({ data: data[lastValues], 
+          history: {   
+            temperature, noise, humidity, luminosity
+          }
+        });
         console.log(data[0].temperature);
       }) 
   }
@@ -40,12 +52,22 @@ class App extends Component {
         return response.json()
       })
       .then(data => {
-        console.log(data);
+        let temperature = data.map( item => parseFloat(item.temperature) );
+        temperature.unshift("temperature");
+        let humidity = data.map( item => parseFloat(item.humidity) );
+        humidity.unshift("humidity");
+        let luminosity = data.map( item => parseFloat(item.illumination)/3 );
+        luminosity.unshift("luminosity");
+        let noise = data.map( item => parseFloat(item.noise) );
+        noise.unshift("noise");
         let lastValues = data.length - 1;
         console.log(lastValues);
         console.log(this);
-        this.setState({ data: data[lastValues] });
-        console.log(data[0].temperature);
+        this.setState({ data: data[lastValues], 
+          history: { 
+            temperature, noise, humidity, luminosity
+          }
+        });
       })
     setInterval(this.handleGetData, 30000);
     // fetch('https://connectorysolutions.com/talentfest/data/')
@@ -143,7 +165,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <ChartLines value={{data: this.state.data}}/>
+        <ChartLines value={{data: this.state.history}}/>
       </main>
         <footer>
           <div class="container final">
