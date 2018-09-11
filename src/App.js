@@ -35,7 +35,31 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Bosch Dashboard</h1>
+        <img class="img-fluid" src={colores} alt="" />
+          <nav class="navbar sticky-top fixed-top navbar-light top">
+            <img class="img-fluid logo-bosch" src={logo} alt="" />
+            <h3>XDK Monitoring</h3>
+          </nav>
+          <nav class="navbar sticky-top fixed-top navbar-light">
+            <i class="fas fa-bars"></i>
+            <ul class="nav justify-content-end right-info">
+              <li class="nav-item">
+                <i class="far fa-life-ring"></i>
+              </li>
+              <li class="nav-item">
+                <i class="fas fa-bell"></i>
+              </li>
+              <li class="nav-item">
+                <p>Nombre de</p>
+              </li>
+              <li class="nav-item">
+                <span><i class="fas fa-chevron-down"></i></span>
+              </li>
+              <li class="nav-item">
+                <img src={person} class="round img-fluid" />
+              </li>
+            </ul>
+          </nav>
         </header>
         <main>
         <div className="sensors">
@@ -73,6 +97,36 @@ class App extends Component {
           </div>
         </div>
       </main>
+      <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="iconos">
+                  <h6></h6>
+                  <a href=""><i class="fab fa-facebook-f"></i></a>
+                  <a href=""><i class="fab fa-twitter"></i></a>
+                  <a href=""><i class="fab fa-youtube"></i></a>
+                  <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="touch">
+                  <h6></h6>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                </div>
+                <div class="bosch">
+                  <h6></h6>
+                  <h4></h4>
+                  <h5><a href=""></a></h5>
+                  <h6></h6>
+                  <h5><a href=""></a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <img class="img-fluid" src={colores} alt="" />
+        </footer>
       </div>
       
     );
