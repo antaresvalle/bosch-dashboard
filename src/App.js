@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './assets/images/Bosch_LOGO_CURVAS_SLOGAN.png'
 import colores from './assets/images/supergraphic.png'
 import person from './assets/images/persona.jpg'
+import ChartLines from './ChartLines';
 // import facebook from 'public/glyphicons-social/png/glyphicons-social-31-facebook.png
 import './App.css';
 
@@ -10,11 +11,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: [],
+      data: []
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     fetch('https://connectorysolutions.com/talentfest/data/2018-09-04 22:00:00/2018-09-0 22:00:00')
       .then(response => {
         return response.json()
@@ -24,13 +25,14 @@ class App extends Component {
         let lastValues = data.length - 1;
         console.log(lastValues);
         this.setState({ data: data[lastValues] });
-        console.log(data[0].temperature);
+        //console.log(data[0].temperature);
       });
   }
+ 
 
   render() {
     // const {data} = this.state;
-    // console.log({data});
+    //console.log(this.state.data);
 
     return (
       <div className="App">
@@ -82,6 +84,7 @@ class App extends Component {
           <div className="noise sensor">
           <h2>Noise</h2>
           <span className="value">{this.state.data.noise}db</span>
+         
           <div className="notification-sensor">
               <i></i>
               <p>Status</p>
@@ -96,7 +99,10 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <ChartLines value={{data: this.state.data}}/>
       </main>
+      <div>
+      </div>
       <footer>
           <div class="container">
             <div class="row">
@@ -130,7 +136,7 @@ class App extends Component {
       </div>
       
     );
-      }
-    }
+  }
+}
     
     export default App;
