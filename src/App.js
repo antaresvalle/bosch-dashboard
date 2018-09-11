@@ -62,19 +62,19 @@ class App extends Component {
     //     console.log(data[0].temperature);
     //   }) 
   }
-  getData(){
-    fetch('https://connectorysolutions.com/talentfest/data/')
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        console.log(data);
-        let lastValues = data.length - 1;
-        console.log(lastValues);
-        this.setState({ data: data[lastValues] });
-        //console.log(data[0].temperature);
-      }) 
-  }
+  // getData(){
+  //   fetch('https://connectorysolutions.com/talentfest/data/')
+  //     .then(response => {
+  //       return response.json()
+  //     })
+  //     .then(data => {
+  //       console.log(data);
+  //       let lastValues = data.length - 1;
+  //       console.log(lastValues);
+  //       this.setState({ data: data[lastValues] });
+  //       //console.log(data[0].temperature);
+  //     }) 
+  // }
  
 
   render() {
