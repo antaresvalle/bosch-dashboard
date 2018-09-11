@@ -154,7 +154,7 @@ class App extends Component {
               <div className="col">
                 <div className="iconos">
                   <h6>Stay up to date</h6>
-                  <a href=""><i id="facebook" class="fab fa-facebook-f"></i></a>
+                  <a href=""><i id="facebook" className="fab fa-facebook-f"></i></a>
                   <a href=""><i className="fab fa-twitter"></i></a>
                   <a href=""><i className="fab fa-youtube"></i></a>
                   <a href=""><i className="fab fa-linkedin-in"></i></a>

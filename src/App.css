@@ -125,18 +125,14 @@ span.value{
   margin-bottom: 2em;
 }
 
-@include media-breakpoint-up(md){
-.sensor > h2 {
-  font-size: 1rem;
-}
 span.value {
   font-size: 1.5rem;
-}
 }
 
 .final{
   margin-top: 3em;
 }
+
 h6{
   font-weight: 600;
 }
